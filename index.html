@@ -1,11 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desafio día 3</title>
+    <title>Juego de Decisiones - Elige tu Camino</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <script src="app.js"></script>
+    <div class="container">
+        <h1>¡Bienvenido! Elige tu camino como desarrollador</h1>
+        
+        <div id="pregunta1">
+            <p>¿Hacia qué área te gustaría especializarte?</p>
+            <button class="option" onclick="elegirArea('frontend')">Front-End</button>
+            <button class="option" onclick="elegirArea('backend')">Back-End</button>
+        </div>
+
+        <div id="pregunta2" style="display:none;">
+            <p>¿Qué lenguaje de programación te gustaría aprender en el área de <span id="areaElegida"></span>?</p>
+            <div id="opcionesLenguajes">
+                <!-- Los botones de los lenguajes se agregarán aquí dinámicamente -->
+            </div>
+        </div>
+
+        <div id="pregunta3" style="display:none;">
+            <p>¿Te gustaría seguir especializándote en <span id="areaEspecializacion"></span> o convertirte en un desarrollador Fullstack?</p>
+            <button class="option" onclick="seguirEspecializacion()">Seguir especializándome en <span id="areaEspecializacion2"></span></button>
+            <button class="option" onclick="convertirseFullstack()">Convertirme en Fullstack</button>
+        </div>
+
+        <!-- Nueva sección para agregar tecnologías -->
+        <div id="pregunta4" style="display:none;">
+            <p>¿En qué otras tecnologías te gustaría especializarte o conocer?</p>
+            <input type="text" id="nuevaTecnologia" placeholder="Escribe una tecnología..." />
+            <button class="option" onclick="agregarTecnologia()">Agregar Tecnología</button>
+            
+            <h3>Lista de tecnologías que te gustaría aprender:</h3>
+            <ul id="listaTecnologias">
+                <!-- Las tecnologías añadidas se mostrarán aquí -->
+            </ul>
+
+            <button class="option" onclick="finalizar()">Terminar</button>
+        </div>
+
+        <div id="resultado" style="display:none;">
+            <h2>¡Felicidades!</h2>
+            <p id="mensajeFinal"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
